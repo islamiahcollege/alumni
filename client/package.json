@@ -1,0 +1,49 @@
+{
+  "name": "alumni",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@clerk/clerk-react": "^5.25.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.0.0",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@tailwindcss/vite": "^4.0.17",
+    "axios": "^1.8.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
+    "env": "^0.0.2",
+    "lucide-react": "^0.484.0",
+    "mongodb": "^6.15.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.4.0",
+    "react-toastify": "^11.0.5",
+    "shadcn-ui": "^0.9.5",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss": "^4.0.17",
+    "toastify": "^2.0.1",
+    "tw-animate-css": "^1.2.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "vite": "^6.2.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
