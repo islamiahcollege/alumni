@@ -65,7 +65,7 @@ const AdminLogin = () => {
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#"
-            class="flex flex-col items-center mb-6 mt-8 text-2xl font-semibold text-gray-900 dark:text-white"
+            class="flex flex-col max-sm:text-2xl items-center mb-6 mt-8 text-2xl font-semibold text-gray-900 dark:text-white"
           >
             Islamiah College Alumni
             <p className="text-gray-600 text-sm ">Admin Panel</p>

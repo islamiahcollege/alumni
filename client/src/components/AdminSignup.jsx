@@ -1,25 +1,20 @@
 import { AppContext } from "@/context/AppContext";
 import axios from "axios";
-import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
+import React, { useContext, useState } from "react";
 
 const AdminSignup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const { backendUrl } = useContext(AppContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    alert("work")
-
     try {
       const response = await axios.post(backendUrl + "/api/company/register", {
         email,
         password,
       });
-
       if (response.data.success) {
         toast.success("Admin Registered");
       }
