@@ -109,26 +109,26 @@ const AdminDashboard = () => {
               <table className="min-w-full table-auto">
                 <thead className="bg-blue-100/40 rounded-full">
                   <tr>
-                    <th className="px-4 py-2 text-left">Name</th>
-                    <th className="px-4 py-2 text-left">Professional</th>
+                    <th className="px-4 py-2 text-left max-sm:text-xs">Name</th>
+                    <th className="px-4 py-2 text-left max-sm:text-xs">Professional</th>
                     <th className="px-4 py-2 text-left max-sm:hidden">
                       Message
                     </th>
-                    <th className="px-4 py-2 text-left">Actions</th>
+                    <th className="px-4 py-2 max-sm:px-2 text-left max-sm:text-xs">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {testimonials.map((testimonial) => (
                     <tr key={testimonial._id} className="border-b">
-                      <td className="px-4 py-2">{testimonial.name}</td>
-                      <td className="px-4 py-2">{testimonial.professional}</td>
+                      <td className="px-4 py-2 max-sm:text-xs">{testimonial.name}</td>
+                      <td className="px-4 py-2 max-sm:text-xs">{testimonial.professional}</td>
                       <td className="px-4 py-2 max-sm:hidden">
                         {testimonial.message.slice(0, 50)}
                       </td>
-                      <td className="px-4 py-2">
+                      <td className="px-4 max-sm:px-3 py-2">
                         <button
                           onClick={() => handleDelete(testimonial._id)} // Pass the ID to the delete function
-                          className="text-red-600 hover:text-red-900 flex items-center"
+                          className="text-red-600 hover:text-red-900 flex items-center max-sm:text-xs"
                         >
                           <FaTrashAlt className="mr-1 max-sm:hidden" />
                           Delete

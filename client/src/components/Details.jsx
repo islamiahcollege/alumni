@@ -35,13 +35,12 @@ const Details = () => {
             >
               Make a Donation Today
             </button>
-
-            <a
-              href="#"
-              class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+            <button
+              type="button"
+              class="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
               Donate Now
-            </a>
+            </button>
           </div>
           <div class="hidden items-center justify-center  lg:mt-0 lg:col-span-5 lg:flex">
             <img

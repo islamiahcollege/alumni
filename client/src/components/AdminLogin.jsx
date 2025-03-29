@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { FaArrowRightToBracket } from "react-icons/fa6";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -12,6 +13,10 @@ const AdminLogin = () => {
 
   const { backendUrl, setCompanyToken, setCompanyData } =
     useContext(AppContext);
+
+  const functionBack = () => {
+    navigate("/");
+  };
 
   const onSubmithandler = async (e) => {
     e.preventDefault();
@@ -67,8 +72,12 @@ const AdminLogin = () => {
           </a>
           <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Login to Dashboard
+              <h1 class="text-xl flex justify-between font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                <p> Login to Dashboard</p>
+                <FaArrowRightToBracket
+                  className="text-pink-400"
+                  onClick={functionBack}
+                />
               </h1>
               <form class="space-y-4 md:space-y-6" onSubmit={onSubmithandler}>
                 <div>
@@ -111,7 +120,6 @@ const AdminLogin = () => {
                 >
                   Login
                 </button>
-            
               </form>
             </div>
           </div>

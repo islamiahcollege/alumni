@@ -1,10 +1,26 @@
-import { useClerk } from "@clerk/clerk-react";
+import { useClerk, useUser } from "@clerk/clerk-react";
 import React from "react";
 import { FaGraduationCap } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Hero = () => {
   const { openSignIn } = useClerk();
+  const navigate = useNavigate();
+  const { isSignedIn } = useUser();
+
+  const handleDonationClick = () => {
+    if (isSignedIn) {
+      toast.info("You are already logged in.");
+
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 1000);
+    } else {
+      openSignIn();
+    }
+  };
+
   return (
     <div className="container 2xl:px-20 xl:px-20 mx-auto my-10">
       <div className="bg-gradient-to-r from-purple-800 to-purple-950 text-white py-16 text-center mx-2 rounded-xl">
@@ -18,7 +34,7 @@ const Hero = () => {
         </p>
         <button
           className="bg-blue-500 hover:bg-blue-700 px-6 py-2 rounded text-white m-1 "
-          onClick={(e) => openSignIn()}
+          onClick={handleDonationClick}
         >
           <a className="flex items-center justify-evenly gap-1">
             <FaGraduationCap /> Make a Donation Today

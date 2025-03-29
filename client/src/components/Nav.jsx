@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
+import { FaAward } from "react-icons/fa6";
 
 const Nav = () => {
   const { openSignIn } = useClerk();
@@ -20,7 +20,14 @@ const Nav = () => {
         </div>
         {user ? (
           <div className="flex items-center gap-3">
-            <Link to={"/dashboard"}>Dashboard</Link>
+            <Link to={"/dashboard"}>
+              <button
+                type="button"
+                class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-400 shadow-sm shadow-purple-300/50 dark:shadow-lg dark:shadow-purple-400/50 font-medium rounded-lg text-sm px-5 py-1.5 text-center me-2 "
+              >
+                Dashboard
+              </button>
+            </Link>
             <p>|</p>
             <p className="max-sm:hidden">
               Hi, {user.firstName + " " + user.lastName}
@@ -29,13 +36,16 @@ const Nav = () => {
           </div>
         ) : (
           <div className="flex gap-4 max-sm:text-xs">
-            <button className="text-gray-600">
-              <Link to={"/login"}> Admin</Link>
+            <button className="text-gray-600 items-center flex">
+              <Link to={"/login"}>
+              <button className="px-4 py-1 bg-purple-100 text-purple-500 rounded-md">Admin</button> </Link>
             </button>
             <button
               onClick={(e) => openSignIn()}
-              className="bg-blue-600 text-white px-6 sm:px-9 py-2 rounded-full"
+              type="button"
+              class="items-center flex gap-1 text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-sm shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-500/50 font-medium rounded-lg text-sm px-5 py-1.5 text-center me-1"
             >
+              <FaAward />
               Login
             </button>
           </div>

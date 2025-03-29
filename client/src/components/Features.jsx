@@ -1,18 +1,25 @@
 import React from "react";
 import { howItWorksData, statsData, featuresData } from "../data/landing";
 import { Card, CardContent } from "./ui/card";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Testimonial from "./Testimonial";
 import { Globe } from "lucide-react";
 import { useClerk, useUser } from "@clerk/clerk-react";
+import { toast } from "react-toastify";
 
 const Features = () => {
   const { openSignIn } = useClerk();
   const { isSignedIn } = useUser();
 
+  const navigate = useNavigate();
+
   const handleDonationClick = () => {
     if (isSignedIn) {
       toast.info("You are already logged in.");
+
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 1000);
     } else {
       openSignIn();
     }
@@ -90,7 +97,7 @@ const Features = () => {
           <a>
             <button
               className="bg-white text-blue-600 hover:bg-blue-50 animate-bounce py-2 px-4 rounded-lg"
-              onClick={(e) => handleDonationClick()}
+              onClick={handleDonationClick}
             >
               Make a Donation Today
             </button>

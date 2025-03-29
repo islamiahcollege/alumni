@@ -48,7 +48,7 @@ const Testimonial = () => {
                   <div className="flex items-center mb-4">
                     <div className="ml-4">
                       <div className="font-semibold">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-pink-400 text-center bg-pink-50 rounded px-2 py-0.5">
                         {testimonial.professional}
                       </div>
                     </div>
