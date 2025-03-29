@@ -6,13 +6,12 @@ import { AiFillHome } from "react-icons/ai";
 const Footer = () => {
   return (
     <div className="container px-4 xl:px-20 mx-auto flex items-center justify-between gap-4 py-3 mt-20">
-      <img width={160} src={""} alt="" />
-      <p className="flex-1 border-l border-gray-400 pl-4 text-sm text-gray-500 max-sm:hidden">
-        Copyright{" "}
+      <p className="flex-1 border-l border-gray-400 pl-4 text-sm text-gray-500 ">
+        <a className="max-sm:hidden"> Copyright </a>
         <a href="https://akash--dev.web.app/" className="font-bold">
           @aktech.dev
         </a>{" "}
-        | All rights reserved.
+        <a className="max-sm:hidden"> | All rights reserved.</a>
       </p>
       <div className="flex gap-6 md:gap-4 max-sm:gap-3.5">
         <a

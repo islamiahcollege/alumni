@@ -23,17 +23,17 @@ export const statsData = [
 // Features Data
 export const featuresData = [
   {
-    // icon: <Community className='h-8 w-8 text-blue-600' />,  
+    // icon: `<${Globe} className='h-8 w-8 text-blue-600' />`,  
     title: "Empowering Connections",
     description: "Join a thriving network that supports and inspires alumni through shared experiences.",
   },
   {
-    // icon: <Workshops className="h-8 w-8 text-blue-600" />,  
+    // icon: <${Workshops} className="h-8 w-8 text-blue-600" />,  
     title: "Learning Opportunities",
     description: "Participate in exclusive workshops and webinars designed to enhance your skills.",
   },
   {
-    // icon: <Diversity className="h-8 w-8 text-blue-600" />,  
+    // icon: <Receipt className="h-8 w-8 text-blue-600" />,  
     title: "Inclusive Community",
     description: "Celebrate diversity and connect with alumni from various backgrounds and disciplines.",
   },
@@ -57,19 +57,19 @@ export const featuresData = [
 // How It Works Data
 export const howItWorksData = [
   {
-    // icon: <UserCheck className="h-8 w-8 text-blue-600" />,  
+    icon: "Globe",  
     title: "1. Join the Alumni Network",
     description:
       "Sign up easily and securely to become part of the vibrant Islamiah College alumni community.",
   },
   {
-    // icon: <People className="h-8 w-8 text-blue-600" />,  
+    icon: "PieChart",  
     title: "2. Connect with Fellow Alumni",
     description:
       "Explore and connect with alumni from various fields and backgrounds to build meaningful relationships.",
   },
   {
-    // icon: <Resources className="h-8 w-8 text-blue-600" />,  
+    icon: "Receipt",  
     title: "3. Access Exclusive Resources",
     description:
       "Enjoy tailored workshops, events, and mentoring opportunities designed to enhance your career and personal growth.",

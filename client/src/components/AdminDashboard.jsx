@@ -3,6 +3,7 @@ import axios from "axios";
 import { FaQuoteRight, FaUsers, FaTrashAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { AppContext } from "@/context/AppContext";
+import { Link } from "react-router-dom";
 
 const AdminDashboard = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -59,13 +60,15 @@ const AdminDashboard = () => {
       <div className="shadow py-4">
         <div className="container px-4 2xl:px-20 sm:px-10 max-sm:px-4 mx-auto flex justify-between overflow-hidden items-center">
           <div className="max-sm:w-1/3 md:w-1/2">
-            <p className="text-gradient">Islamiah college alumni</p>
+            <Link to={"/"}>
+            <p className="text-gradient">Islamiah college alumni</p></Link>
           </div>
 
           <div className="flex gap-4 max-sm:text-xs">
+            <Link to={"/admin"}>
             <button className="bg-cyan-400 text-white px-6 sm:px-9 py-2 rounded-md">
-              Admin Panel
-            </button>
+              New Admin
+            </button></Link>
           </div>
         </div>
       </div>

@@ -1,14 +1,23 @@
 import React from "react";
-import {
-  howItWorksData,
-  statsData,
-  featuresData,
-} from "../data/landing";
-import { Card, CardContent } from "./ui/card"; 
+import { howItWorksData, statsData, featuresData } from "../data/landing";
+import { Card, CardContent } from "./ui/card";
 import { Link } from "react-router-dom";
 import Testimonial from "./Testimonial";
+import { Globe } from "lucide-react";
+import { useClerk, useUser } from "@clerk/clerk-react";
 
 const Features = () => {
+  const { openSignIn } = useClerk();
+  const { isSignedIn } = useUser();
+
+  const handleDonationClick = () => {
+    if (isSignedIn) {
+      toast.info("You are already logged in.");
+    } else {
+      openSignIn();
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Stats Section */}
@@ -55,7 +64,7 @@ const Features = () => {
             {howItWorksData.map((step, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  {step.icon}
+                  <Globe className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
@@ -78,11 +87,14 @@ const Features = () => {
             Join thousands of alumni who are supporting Islamiah College to
             enhance future generations’ academic and cultural experiences.
           </p>
-          <Link to="/dashboard">
-            <button className="bg-white text-blue-600 hover:bg-blue-50 animate-bounce py-2 px-4 rounded-lg">
+          <a>
+            <button
+              className="bg-white text-blue-600 hover:bg-blue-50 animate-bounce py-2 px-4 rounded-lg"
+              onClick={(e) => handleDonationClick()}
+            >
               Make a Donation Today
             </button>
-          </Link>
+          </a>
         </div>
       </section>
     </div>

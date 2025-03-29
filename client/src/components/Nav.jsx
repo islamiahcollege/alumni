@@ -12,7 +12,11 @@ const Nav = () => {
     <div className="shadow bg-blue-50/10 py-4">
       <div className="container px-4 2xl:px-20 sm:px-10 max-sm:px-4 mx-auto flex justify-between overflow-hidden items-center">
         <div className="max-sm:w-1/3 md:w-1/2">
-          <p className="text-gradient">Islamiah college alumni</p>
+          <Link to={"/"}>
+            <p className="text-gradient max-sm:text-xs md:text-2xl">
+              Islamiah college alumni
+            </p>
+          </Link>
         </div>
         {user ? (
           <div className="flex items-center gap-3">
