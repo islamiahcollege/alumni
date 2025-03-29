@@ -15,6 +15,7 @@ const AdminSignup = () => {
         email,
         password,
       });
+      toast.success("Admin Registered");
       if (response.data.success) {
         toast.success("Admin Registered");
       }
