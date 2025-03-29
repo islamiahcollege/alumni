@@ -1,15 +1,18 @@
+import { AppContext } from "@/context/AppContext";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
-const AdminSignup = () => {
+const AdminSignup = async () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { backendUrl } = useContext(AppContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:5000/api/company/register", { email, password })
+  axios
+      .post(backendUrl + "/api/company/register", { email, password })
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
   };
@@ -20,7 +23,7 @@ const AdminSignup = () => {
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
             href="#"
-            class="flex flex-col items-center mb-6 mt-8 text-2xl font-semibold text-gray-900 dark:text-white"
+            class="flex flex-col max-sm:text-sm items-center mb-6 mt-8 text-2xl font-semibold text-gray-900 dark:text-white"
           >
             Islamiah College Alumni
             <p className="text-gray-600 text-sm ">Admin Panel</p>
